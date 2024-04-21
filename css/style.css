@@ -1,0 +1,138 @@
+*{
+    margin :0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.75)),url(/PROJECT/image/background.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+
+
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width:120px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0); 
+   
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: azure;
+    text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: aquamarine;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.4s;
+
+ }
+ .navbar ul li:hover::after{
+    width: 100%;
+
+ }
+ .content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;   
+ }
+ .content h1{
+    font-size: 60px;
+    color: rgba(0, 255, 251, 0.749);
+    
+ }
+ .content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    color: #ccff00a0;
+    font-style: italic;
+    font-size: larger;
+ }
+ button{
+    width: 200px;
+    padding: 15px 50px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+ }
+ span{
+    background: #009688;
+    height: 100%;
+    width: 00%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.6s;
+
+ }
+ button:hover span{
+    width: 100%;
+ }
+ button:hover{
+    border: none;
+ }
+ .hotbikes{
+   text-align: center;
+   color: red;
+   position: relative;
+
+ }
+
+
+
+ /* product css */
+ .card-img-top{
+   width: 100%;
+   height: 200px;
+   object-fit: contain;
+ }
+
+
+
+
+ /* product end */ 
+
+
+ /* footor */
+
+
+

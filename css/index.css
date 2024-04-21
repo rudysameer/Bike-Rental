@@ -1,0 +1,100 @@
+/* Resetting default styles */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Styling the header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(17, 16, 71);
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  /* Styling the logo */
+  .logo h1 {
+    margin: 0;
+    color: yellowgreen;
+  }
+  
+  /* Styling the navigation */
+  nav ul {
+    display: flex;
+    margin-right: 100px;
+  }
+  
+  nav ul li {
+    margin-left: 60px;
+  }
+  
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    color: yellowgreen;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the dropdown button */
+.dropdown-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style for the dropdown items */
+.dropdown-item {
+  padding: 12px;
+  display: block;
+  text-align: left;
+}
+
+/* Style for the dropdown items on hover */
+.dropdown-item:hover {
+  background-color: #ddd;
+}

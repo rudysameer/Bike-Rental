@@ -1,0 +1,71 @@
+header{
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 1.2rem;
+    display: flex;
+    background-color: cadetblue;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: aliceblue;
+    max-width: 880px;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 1.5rem;
+}
+.left{
+    flex-basis: 45%;
+
+}
+.right{
+    flex-basis: 50%;
+}
+form{
+    padding: 1rem;
+}
+form input[type="text"],form input[type="email"]{
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: o.5rem 1rem;
+
+}
+.date,#zip{
+    display: flex;
+    margin-top: 0.5rem;
+    
+}
+#zip select,#zip input[type="number"],.date input[type="date"]{
+    padding: 0.5rem 0.7rem;
+}
+#payment select{
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    
+
+}
+
+input[type="submit"]{
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+    background-color: rgb(22, 102, 214);
+    color: aliceblue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: rgb(26, 5, 118);
+}
+
+@media only screen and (max-width:770px){
+    .container{
+        flex-direction: column;
+    }
+    .body{
+        overflow-x: hidden;
+    }
+}
