@@ -31,14 +31,14 @@
                 
                 <li><a href="/project/index1.php">Home</a></li>
                 <li><a href="product.php">Products</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="contact.php">Contact us</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="/project/cart.php"><i class="fa-solid fa-cart-shopping"></i>CART<sup><?php cart_item();?></sup></a></li>
+                <li><a href="/project/cart.php"><i class="fa-regular fa-heart"></i> Favorites<sup><?php ?></sup></a></li>
                 <!-- <li><a href="/project/cart.php">TOtal Price :<?php total_cart_price();?></a></li> -->
                 <?php 
                 if(isset($_SESSION['username']))
                 {
-                    echo "<li><a href='./user_area/profile.php'>My Account</a></li>";
+                    echo "<li><a href='./user_area/profile.php'><i class='fa-regular fa-user'></i> My Account</a></li>";
                 }
                 
                 ?>
@@ -54,14 +54,12 @@
                 <p>Sign up and get ready for a ride.<br> Select your ride on your own</p>
                 <div>
                     <?php 
-                     if(!isset($_SESSION['username'])){
-                        echo "
-                        <button type='button'><span></span><a href='./user_area/user_registeration.php' style='text-decoration:none;'' class='text-light'>Sign-Up</a></button>";
-                    }
-                    else{
-                        echo"
-                        welcome";
-                    }
+                    
+                     if(isset($_SESSION['username'])){
+                        $username = $_SESSION['username'];
+                        echo "<h3>Welcome $username<br></h3>";
+                     
+                     }
                     
                     
                     ?>
@@ -71,7 +69,10 @@
                      if(!isset($_SESSION['username'])){
                         echo "
                         <button type='button'><span></span><a href='./user_area/user_login.php' style='text-decoration:none;'' class='text-light'>Log-IN</a></button>";
+                        echo "
+                        <button type='button'><span></span><a href='./user_area/user_registeration.php' style='text-decoration:none;'' class='text-light'>Sign-Up</a></button>";
                     }
+                    
                     else{
                         echo"
                         <button type='button'><span></span><a href='./user_area/logout.php' style='text-decoration:none;'' class='text-light'>Log-out</a></button>";
@@ -120,6 +121,7 @@
         <p class="text-center">All the latest and hottest bikes are here.</p>
         
     </div>
+
     <div class="search-bar" style="margin:30px;">
     <form  class="d-flex" role="search" action="search_product.php" method="get">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:25%;  border: 2px solid green;" name="search_data">
@@ -127,6 +129,7 @@
                     <input type="submit" value="Search" class="btn btn-outline-success" name="search_data_product">
                 </form>
     </div>
+    
 
     <!-- third child -->
     <div class="row">

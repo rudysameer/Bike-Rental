@@ -35,14 +35,14 @@
                 </li>
                 <li><a href="/project/index1.php">Home</a></li>
                 <li><a href="product.php">Products</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href=""><i class="fa-solid fa-cart-shopping"></i>CART<sup><?php cart_item();?></sup></a></li>
+                <li><a href="contact.php">Contact us</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="/project/cart.php"><i class="fa-regular fa-heart"></i> Favorites<sup><?php ?></sup></a></li>
                 <!-- <li><a href="">TOtal Price :<?php total_cart_price();?></a></li> -->
                 <?php 
                 if(isset($_SESSION['username']))
                 {
-                    echo "<li><a href='./user_area/profile.php'>My Account</a></li>";
+                    echo "<li><a href='./user_area/profile.php'><i class='fa-regular fa-user'></i> My Account</a></li>";
                 }
                 
                 ?>

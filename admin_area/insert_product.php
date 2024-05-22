@@ -4,6 +4,7 @@ if(isset($_POST['insert_products'])){
     $product_title = $_POST['product_title'];
     $product_description = $_POST['product_description'];
     $product_keywords = $_POST['product_keywords'];
+    $product_features = $_POST['product_features'];
     $product_category = $_POST['product_category'];
     $product_brand = $_POST['product_brand'];
     $product_price = $_POST['price'];
@@ -29,7 +30,7 @@ if(isset($_POST['insert_products'])){
         move_uploaded_file($temp_image3,"./product_images/$product_image3");
 
         // insertquery
-        $insert_products = "INSERT INTO `products`(product_title,product_description,product_keywords,category_id,brand_id,product_image1,product_image2,product_image3,price,date,status) VALUES ('$product_title','$product_description','$product_keywords','$product_category','$product_brand','$product_image1','$product_image2','$product_image3','$product_price',NOW(),'$product_status')";
+        $insert_products = "INSERT INTO `products`(product_title,product_description,product_features,product_keywords,category_id,brand_id,product_image1,product_image2,product_image3,price,date,status) VALUES ('$product_title','$product_description','$product_features','$product_keywords','$product_category','$product_brand','$product_image1','$product_image2','$product_image3','$product_price',NOW(),'$product_status')";
 
         $result_query = mysqli_query($con,$insert_products);
 
@@ -80,13 +81,17 @@ if(isset($_POST['insert_products'])){
             <!-- product description -->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_description" class="form-label">Product Description</label>
-                <input type="text" name="product_description" id="product_description" class="form-control" placeholder="Enter Product description" autocomplete="off" required>  
+                <input type="text" name="product_description" id="product_description" class="form-control" placeholder="Enter Product description" autocomplete="off"  required>  
             </div>
 
             <!-- Product keywords -->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_keywords" class="form-label">Product Keywords</label>
                 <input type="text" name="product_keywords" id="product_keywords" class="form-control" placeholder="Enter Product Keywords" autocomplete="off" required>  
+            </div>
+            <div class="form-outline mb-4 w-50 m-auto">
+                <label for="product_features" class="form-label">Product Features</label>
+                <textarea type="text" name="product_features" id="product_features" class="form-control" autocomplete="off" required> </textarea> 
             </div>
 
             <!-- categories -->

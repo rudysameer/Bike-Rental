@@ -31,14 +31,14 @@
                 </li>
                 <li><a href="/project/index1.php">Home</a></li>
                 <li><a href="product.php">Products</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="contact.php">Contact us</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="/project/cart.php"><i class="fa-solid fa-cart-shopping"></i>CART<sup><?php cart_item();?></sup></a></li>
+                <li><a href="/project/cart.php"><i class="fa-regular fa-heart"></i> Favorites<sup><?php ?></sup></a></li>
                 <!-- <li><a href="/project/cart.php">TOtal Price :<?php total_cart_price();?></a></li> -->
                 <?php 
                 if(isset($_SESSION['username']))
                 {
-                    echo "<li><a href='./user_area/profile.php'>My Account</a></li>";
+                    echo "<li><a href='./user_area/profile.php'><i class='fa-regular fa-user'></i> My Account</a></li>";
                 }
                 
                 ?>
@@ -47,18 +47,20 @@
                 </li>
                 
             </ul>
+            
         </div>  
     <header class="flex">
+        
       
         <div class="container">
         
             
             <div class="header title">
                 <h1 class="ah">
-                    About
+                    About US 
                 </h1>
-
-                <p class="ap">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque, consequatur laboriosam fuga autem, quisquam animi fugiat a laudantium quia exercitationem error odit corrupti veritatis nemo placeat libero maxime obcaecati.</p>
+               
+                <p class="ap" style="color:lightpink; font-weight:bold;font-size:20px;">We are the premier bike rental service provider in Nepal. Our exceptional services cater to your biking needs with top-notch bikes and professional assistance. Join us for an unforgettable biking experience in Nepal.</p>
 
             </div>
         </div>
@@ -77,8 +79,8 @@
                 </div>
                 <div class="about-row">
                     <div class="info">
-                        <h2 class="ha">15 years of experience</h2>
-                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptate laborum fugiat possimus tenetur corporis reiciendis magni soluta sequi mollitia eum fuga, exercitationem quis? Modi temporibus qui numquam ab in?</p>
+                        <h2 class="ha">Started from college</h2>
+                        <p class="text"><strong>Samir and Ayudh,</strong> two ambitious college students with a shared passion for biking, embarked on a unique journey. Frustrated by the lack of affordable and convenient bike rental options near their campus, they decided to take matters into their own hands. With determination and creativity, they built a bike rental system from scratch, starting with a small fleet of quality bikes and user-friendly booking software. Their venture quickly gained popularity among students and locals alike, offering not just bikes but also a sense of freedom and exploration. Samir and Ayudh's entrepreneurial spirit and dedication turned their college dream into a thriving reality, shaping the way people experience biking in their community.</p>
                     </div>
 
 
@@ -91,7 +93,7 @@
     <section class="team">
         <div class="wrapper-team">
             <div class="title-team">
-                <h4 class="h4-team"> Our Team </h4>
+                <h4 class="h4-team"> Founders </h4>
             </div>
     
             <div class="card_container">
@@ -101,27 +103,27 @@
                     </div>
                     <div class="content-team">
                         <div class="contentBx">
-                            <h3 class="h3-team">Ayudh Pantha <br> <span class="team-span">Web Analyst</span></h3>
+                            <h3 class="h3-team">Ayudh Pantha <br> <p style="font-size:10px;">Web Analyst</p></h3>
                         </div>
                         <ul class="sci">
-                            <li class="li-team" style="--i: 1"><a class="a-team" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li class="li-team" style="--i: 2"><a class="a-team" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li class="li-team" style="--i: 3"><a class="a-team" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="li-team" style="--i: 1"><a class="a-team" href="https://www.instagram.com/ayudh655/"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="li-team" style="--i: 2"><a class="a-team" href="https://www.facebook.com/ayudh.pantha.9"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="li-team" style="--i: 3"><a class="a-team" href=""><i class="fa-brands fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="imbBx">
-                        <img src="./image/team-1.png" alt="" class="img-team">
+                        <img src="./user_area/user_images/me.jpg" alt="" class="img-team">
                     </div>
                     <div class="content-team">
                         <div class="contentBx">
-                            <h3 class="h3-team">Samir Maharjhan <br> <span class="team-span">Web Analyst</span></h3>
+                            <h3 class="h3-team">Samir Maharjan <br> <p style="font-size:10px;">Web Analyst</p></h3>
                         </div>
                         <ul class="sci">
-                            <li class="li-team" style="--i: 1"><a class="a-team" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li class="li-team" style="--i: 2"><a class="a-team" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="li-team" style="--i: 1"><a class="a-team" href="https://www.instagram.com/mhrz_sameer01/"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="li-team" style="--i: 2"><a class="a-team" href="https://www.facebook.com/samir.maharjan.7549/"><i class="fa-brands fa-facebook"></i></a></li>
                             <li class="li-team" style="--i: 3"><a class="a-team" href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         </ul>
                     </div>
@@ -132,49 +134,9 @@
 
     <!-- footer section -->
     <section>
-        <footer>
-            <div class="row">
-                <div class="col">
-                    <img src="./image/img10.png" class="logo1">
-                    <p class="paraf">we provide a better and comfortable services to our customer.Customer satisfication is our first priority</p>
-    
-                </div>
-                <div class="col">
-                    <h3 class="hf">Office <div class="under"><span class="sp"></span></div></h3>
-                    <p class="pf">kumaripati,Lalitpur</p>
-                    <p class="pf">Bagmati, PIN:550550, Nepal</p>
-                    <p class="email-id">royalcar@gmail.com</p>
-                    <h4>+977-9840000012</h4>
-                </div>
-    
-                <div class="col">
-                    <h3 class="hf">Links <div class="under"><span class="sp"></span></div></h3>
-                    <ul class="ulf">
-                        <li class="lif"><a class="folik"href="#">Home</a></li>
-                        <li class="lif"><a class="folik"href="#">Product</a></li>
-                        <li class="lif"><a class="folik"href="#">About Us</a></li>
-                        <li class="lif"><a class="folik"href="#">FAQs</a></li>
-                    </ul>
-                </div>
-    
-                <div class="col">
-                    <h3 class="hf">Social Media <div class="under"><span class="sp"></span></div></h3>
-                    <div class="social-icons">
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-viber"></i>
-                        <i class="fab fa-twitter"></i>
-                      </div>
-                </div>
-    
-                
-            </div>
-            <hr class="hrfe">
-            <p class="copyright">Royal Rental 2024 . All Right Reserved </p>
-    
-    
-    
-        </footer>
+       <footer>
+        <?php include 'footer.php';?>
+       </footer>
     </section>
 
 

@@ -27,7 +27,7 @@ header{
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/trip-2.jpg);
     
     flex-direction: column;
-    color:#fff;
+    color:#23dafe;
     text-align:center; 
     filter: brightness(110%) contrast(90%);
     object-fit: contain;

@@ -34,6 +34,7 @@ function getproducts()
         <p class='card-text'style='font-weight:bold;'>Price:$product_price/week</p>
         <a href='index1.php?add_to_cart=$product_id' class='btn btn-info'>Add to Favorites</a>
         <a href='./product_detail.php?product_id=$product_id' class='btn btn-secondary'>View Details</a>
+        <a href='./user_area/checkout.php?product_id=$product_id' class='btn btn-info'>Rent</a>
         
         </div>
         </div>
@@ -201,8 +202,10 @@ function search_product(){
         <div class='card-body'>
         <p class='card-text'>$product_description</p>
         <p class='card-text'style='font-weight:bold;'>Price:$product_price/week</p>
-        <a href='index1.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>
+        
+        <a href='index1.php?add_to_cart=$product_id' class='btn btn-info'>Add to Favorites</a>
         <a href='./product_detail.php?product_id=$product_id' class='btn btn-secondary'>View Details</a>
+        <a href='./user_area/checkout.php?product_id=$product_id' class='btn btn-info'>Rent</a>
         
         </div>
         </div>
@@ -221,7 +224,7 @@ function view_details(){
     $product_id = $_GET['product_id'];
     $select_query = "SELECT * FROM `products` WHERE product_id=$product_id";
     $result_query = mysqli_query($con,$select_query);
-
+   
     while($row = mysqli_fetch_assoc($result_query))
     {
         $product_id = $row['product_id'];
@@ -233,25 +236,77 @@ function view_details(){
         $product_image2 = $row['product_image2'];
         $product_image3 = $row['product_image3'];
         $product_price = $row['price'];
+       
+        
+        $product_features= $row['product_features'];
+        $list_features = explode(",",$product_features);
         
         echo "
         <div class='row'>
-        <div class='col-md-4 mb-3'>
-        <div class='card'>
+    <div class='col-md-5 mb-3'>
+        <div class='card mb-4'>
         <h5 class='card-title p-2' style='text-align:center; font-weight:bold; color:green;'>$product_title</h5>
         <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-        <div class='card-body'>
+        <div class='card-body text-center'>
         <p class='card-text'>$product_description</p>
         <p class='card-text'style='font-weight:bold;'>Price:$product_price/week</p>
-        <a href='index1.php?add_to_cart=$product_id' class='btn btn-info'>Add to Cart</a>
-        <a href='index1.php' class='btn btn-secondary'>Go Home</a>
+        
+        <a href='./user_area/checkout.php?product_id=$product_id' class='btn btn-info'>Rent</a>
+        <a href='index1.php?add_to_cart=$product_id' class='btn btn-secondary'>Add to Favorites</a>
+        
+        <a href='index1.php' class='btn btn-info'>Go Home</a>
         
         </div>
         </div>
+            <div class='reviews'>
+            <h3 class='fw-bold text-center'>Reviews and Ratings</h3>";
+
+         $select_reviews="SELECT * FROM `reviews` where product_id=$product_id";
+         $result_reviews = mysqli_query($con,$select_reviews);
+        while($row_reviews=mysqli_fetch_assoc($result_reviews)){
+            $comment = $row_reviews['comment'];
+            $star = $row_reviews['star'];
+            $date = $row_reviews['date'];
+            $review_username = $row_reviews['username'];
+            $select_image = "SELECT * FROM `user_table` WHERE username='$review_username'";
+            $result_image = mysqli_query($con,$select_image);
+            $row_user = mysqli_fetch_assoc($result_image);
+            $image = $row_user['user_image'];
+
+    echo "<div class='d-flex align-items-start mb-2' style='border:3px solid  rgba(24, 122, 149, 0.638); padding: 20px; margin-right: 15px;'>
+    <img src='./user_area/user_images/$image' alt='Profile Picture' style='width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; object-fit: cover;'>
+    <div class='flex-grow-1'>
+        <div class='d-flex'>
+            <div>
+                <h3 style='font-size: 16px; font-weight: bold; margin-right: 10px;'>$review_username</h3>
+                <p style='font-size: 14px; color: grey;'>$date</p>
+            </div>
+            <div class='d-flex'>
+                <p style='margin-right: 5px;'></p>";
+                for($i=0;$i<$star;$i++){
+                echo"
+                
+                <i class='fa fa-star text-secondary'></i>";
+                }
+                echo"
+            </div>
+        </div>
+        <p style='margin-right: 30px;'>$comment</p>
+    </div>
+</div>";}
+        
+
+
+         
+
+
+
+                
+       echo"     </div>
     </div>
     
     
-    <div class='col-md-8'>
+    <div class='col-md-7'>
                     
                 <div class='row' style='margin-top:30px;'>
                     <div class='col-md-6'>
@@ -261,11 +316,121 @@ function view_details(){
                     <img src='./admin_area/product_images/$product_image3' class='card-img-top' alt='$product_title'>
                     </div>
                 </div>
+                
 
+                <div class='row' style='margin-top:30px; margin-left:15px;'>";
+                echo "<h3 style='color:green;'>Key Features</h3>";
+
+                echo"<ul>";
+                foreach($list_features as $list){
+                    echo "<li>". trim($list) . "</li>";
+                }
+                echo"</ul>";
+                if(isset($_SESSION['username']))
+                {
+                $username = $_SESSION['username'];
+                echo $username;
+                
+                echo"
+            <form method='post'>
+                <h4 class='fw-bold my-2'>Leave a Reply</h4>
+                <div class='row'>
+                                    <div class='col-lg-12'>
+                                        <div class='border-bottom rounded'>
+                                            <textarea name='review' id='' class='form-control' cols='30' rows='8' placeholder='Your Review *' spellcheck='false' style='border:3px solid aqua; border-radius:14px;'></textarea>
+                                        </div>
+                                    </div>
+                                    <div class='col-lg-12'>
+                                        <div class='d-flex justify-content-between py-3 mb-5'>
+                                            <div class='d-flex align-items-center'>
+                                                <p class='mb-0 me-3 fw-bold'>Please rate:</p>
+                                                <div class='d-flex align-items-center' style='font-size: 12px;'>
+                                                    <label for='star' style='color:red; font-size:20px;'><i class='fa-regular fa-star'></i>Star :</label>
+                                                <select name='star' id='star' style='color:green; font-size:20px; '>
+                                                    <option value='5'>5</option>
+                                                    <option value='4'>4</option>
+                                                    <option value='3'>3</option>
+                                                    <option value='2'>2</option>
+                                                    <option value='1'>1</option>
+                                                </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type='submit' name='post_comment' class='btn btn-secondary rounded-pill px-4 py-3 '>Post Comment</button>
+            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            
                 </div>
-                </div>";
 
-    } 
+            </div>
+        
+        
+        </div>";
+       if(isset($_POST['post_comment']))
+       {
+        
+        $comment = $_POST['review'];
+        $star = $_POST['star'];
+
+        $insert_comment = "INSERT INTO `reviews`(product_id,username,comment,star) VALUES($product_id,'$username','$comment',$star)";
+        $result_comment = mysqli_query($con,$insert_comment);
+        if($result_comment){
+
+        echo "<script>window.alert('comment posted succussfully')</script>";
+        echo "<script>window.open('./product_detail.php?product_id=$product_id','_self')</script>";
+        }
+        else
+        {
+            echo "<script>window.alert('comment posting failed')</script>";
+        }
+    }
+
+
+    }
+    else{
+        echo"
+               
+        <h4 class='fw-bold my-2'>Leave a Reply</h4>
+        <div class='row'>
+                            <div class='col-lg-12'>
+                                <div class='border-bottom rounded'>
+                                    <textarea name='review' id='' class='form-control' cols='30' rows='8' placeholder='Your Review *' spellcheck='false' style='border:3px solid aqua; border-radius:14px;'></textarea>
+                                </div>
+                            </div>
+                            <div class='col-lg-12'>
+                                <div class='d-flex justify-content-between py-3 mb-5'>
+                                    <div class='d-flex align-items-center'>
+                                        <p class='mb-0 me-3 fw-bold'>Please rate:</p>
+                                        <div class='d-flex align-items-center' style='font-size: 12px;'>
+                                            <label for='star' style='color:red; font-size:20px;'><i class='fa-regular fa-star'></i>Star :</label>
+                                        <select name='star' id='star' style='color:green; font-size:20px; '>
+                                            <option value='5'>5</option>
+                                            <option value='4'>4</option>
+                                            <option value='3'>3</option>
+                                            <option value='2'>2</option>
+                                            <option value='1'>1</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <a href='./user_area/user_login.php' class='btn btn-secondary rounded-pill px-4 py-3'>Login</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+        </div>
+
+    </div>
+
+
+</div>";
+
+    }
+
+
+}
     }
     }
     

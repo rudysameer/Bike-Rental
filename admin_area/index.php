@@ -1,7 +1,7 @@
 <?php 
     include '../includes/connect.php';
     include '../functions/common_functions.php';
-    session_start();
+    @session_start();
 
 ?>
 
@@ -43,8 +43,9 @@
                             if(isset($_SESSION['admin_username'])){
                             $admin_name = $_SESSION['admin_username'];
                             }
+                            
                         ?>
-                        <li class="nav-item">WELCOME <?php $admin_name;?></li>
+                        <li class="nav-item">WELCOME <?php echo $admin_name; ?></li>
                     </ul>
                 </nav>
             </div>
@@ -60,7 +61,7 @@
             <div class="col-md-12 bg-secondary p-1 d-flex align-items-center">
                 <div class="px-5">
                     <a href="#"><img src="../image/img10.png" alt="" class="admin_image"></a>
-                    <p class="text-light text-center">Admin Name</p>
+                    <p class="text-light text-center">Admin Mr. <?php echo $admin_name;?></p>
                 </div>
                 <div class="button text-center">
                     <button class="my-3"><a href="insert_product.php" class="nav-link text-light my-1" style="background-color:darkgreen;">INSERT PRODUCTS</a></button>
@@ -70,7 +71,7 @@
                     <button><a href="index.php?insert_brands" class="nav-link text-light my-1" style="background-color:darkgreen;">INSERT BRANDS</a></button>
                     <button><a href="index.php?view_brands" class="nav-link text-light my-1" style="background-color:darkgreen;">VIEW BRANDS</a></button>
                     <button><a href="pendingorder.php" class="nav-link text-light my-1" style="background-color:darkgreen;">PENDING ORDERS</a></button>
-                    <button><a href="" class="nav-link text-light my-1" style="background-color:darkgreen;">Confirm ORDERS</a></button>
+                    <!-- <button><a href="" class="nav-link text-light my-1" style="background-color:darkgreen;">Confirm ORDERS</a></button> -->
                     <button><a href="index.php?list_users" class="nav-link text-light my-1" style="background-color:darkgreen;">LIST USERS</a></button>
                     <br>
                     <button><a href="admin_logout.php" class="nav-link text-light my-1" style="background-color:darkgreen;">LOG-OUT</a></button>
