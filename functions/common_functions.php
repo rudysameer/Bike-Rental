@@ -82,6 +82,7 @@ function get_unique_categories()
         <p class='card-text'style='font-weight:bold;'>Price:$product_price/week</p>
         <a href='index1.php?add_to_cart=$product_id' class='btn btn-info'>Add to Favorites</a>
         <a href='./product_detail.php?product_id=$product_id' class='btn btn-secondary'>View Details</a>
+        <a href='./user_area/checkout.php?product_id=$product_id' class='btn btn-info'>Rent</a>
         
         </div>
         </div>
@@ -125,6 +126,7 @@ function get_unique_brands()
         <p class='card-text'style='font-weight:bold;'>Price:$product_price/week</p>
         <a href='index1.php?add_to_cart=$product_id' class='btn btn-info'>Add to Favorites</a>
         <a href='./product_detail.php?product_id=$product_id' class='btn btn-secondary'>View Details</a>
+        <a href='./user_area/checkout.php?product_id=$product_id' class='btn btn-info'>Rent</a>
         
         </div>
         </div>
@@ -143,7 +145,7 @@ function getbrands(){
                         $brand_name= $row_data['brand_name'];
                         $brand_id = $row_data['brands_id'];
                         echo "<li class='nav-item '>
-                        <a href='index1.php?brand_id=$brand_id' class='nav-link text-light'>$brand_name</a>
+                        <a href='product.php?brand_id=$brand_id' class='nav-link text-light'>$brand_name</a>
                     </li>";
                     }
 
@@ -163,7 +165,7 @@ function getcategories(){
         $category_id = $row_data['category_id'];
 
         echo "<li class='nav-item '>
-        <a href='index1.php?category_id=$category_id' class='nav-link text-light'>$category_name</a>
+        <a href='product.php?category_id=$category_id' class='nav-link text-light'>$category_name</a>
     </li>";
 
     }

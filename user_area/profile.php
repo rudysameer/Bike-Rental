@@ -160,49 +160,7 @@ $name = $_SESSION['username'];
             
 
 
-    <footer>
-        <div class="row">
-            <div class="col">
-                <img src="image/img10.png" class="logo1">
-                <p class="paraf">we provide a better and comfortable services to our customer.Customer satisfication is our first priority</p>
-
-            </div>
-            <div class="col">
-                <h3 class="hf">Office <div class="under"><span class="sp"></span></div></h3>
-                <p class="pf">kumaripati,Lalitpur</p>
-                <p class="pf">Bagmati, PIN:550550, Nepal</p>
-                <p class="email-id">royalcar@gmail.com</p>
-                <h4>+977-9840000012</h4>
-            </div>
-
-            <div class="col">
-                <h3 class="hf">Links <div class="under"><span class="sp"></span></div></h3>
-                <ul class="ulf">
-                    <li class="lif"><a class="folik"href="/">Home</a></li>
-                    <li class="lif"><a class="folik"href="#">Product</a></li>
-                    <li class="lif"><a class="folik"href="#">About Us</a></li>
-                    <li class="lif"><a class="folik"href="#">FAQs</a></li>
-                </ul>
-            </div>
-
-            <div class="col">
-                <h3 class="hf">Social Media <div class="under"><span class="sp"></span></div></h3>
-                <div class="social-icons">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-viber"></i>
-                    <i class="fab fa-twitter"></i>
-                  </div>
-            </div>
-
-            
-        </div>
-        <hr class="hrfe">
-        <p class="copyright">Royal Rental 2024 . All Right Reserved </p>
-
-
-
-    </footer>
+    <?php include '../footer.php';?>
     
     
 

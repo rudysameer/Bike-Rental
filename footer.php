@@ -56,11 +56,11 @@
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#"><i class="fas fa-envelope"></i></a></li>
         </ul>
-        <p class="address">123 Street Name, City, Country</p>
+        <p class="address">123 Jawlakhel,Lalitpur, Nepal</p>
         <ul class="footer-links">
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
         </ul>
     </div>
 </footer>
