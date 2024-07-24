@@ -35,6 +35,7 @@
                 <li><a href="contact.php">Contact us</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="/project/cart.php"><i class="fa-regular fa-heart"></i> Favorites<sup><?php ?></sup></a></li>
+                
                 <!-- <li><a href="/project/cart.php">TOtal Price :<?php total_cart_price();?></a></li> -->
                 <?php 
                 if(isset($_SESSION['username']))

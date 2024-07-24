@@ -468,14 +468,14 @@ function cart(){
         $num_rows = mysqli_num_rows($result_query);
         if($num_rows>0)
         {
-            echo "<script>alert('Bike alredy present in cart')</script>";
-            echo "<script>window.open('index1.php','_self')</script>";
+            echo "<script>alert('Bike alredy present in favorites')</script>";
+            echo "<script>window.open('product.php','_self')</script>";
         }
         else{
             $insert_query = "INSERT INTO `cart_details` (product_id, ip_address, quantity) VALUES ($get_product_id,'$get_ip_address',1)";
             $result_query = mysqli_query($con,$insert_query);
-            echo "<script>alert('Bike sucussfully added to Cart')</script>";
-            echo "<script>window.open('index1.php','_self')</script>";
+            echo "<script>alert('Bike sucussfully added to Favorites')</script>";
+            echo "<script>window.open('cart.php','_self')</script>";
         }
     }
     
@@ -560,7 +560,7 @@ function pending_order()
                         // Order</h3>";
                         echo "<div class='text-center text-danger mt-5 mb-3'><h3>You have <strong>$row_count</strong>  Pending  
                          Order</h3></div>
-                        <p class='text-center'><a href='profile.php?pending_order' class='text-dark'>Order Details</a>"; 
+                        <p class='text-center'><a href='profile.php?my_order' class='text-dark'>Order Details</a>"; 
                                                
                     }
                     else{

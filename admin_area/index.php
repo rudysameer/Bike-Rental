@@ -4,7 +4,12 @@
     @session_start();
 
 ?>
+<?php 
+if(isset($_SESSION['admin_username'])){
+    $admin_name = $_SESSION['admin_username'];
+    
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -164,3 +169,10 @@
         
 </body>
 </html>
+<?php }
+else{
+    echo "<script>window.open('admin_login.php','_self')</script>";
+
+}
+?>
+

@@ -1,5 +1,6 @@
 <?php include '../includes/connect.php'?>
 <?php include '../functions/common_functions.php';
+error_reporting(0);
 
 session_start();
 ?>

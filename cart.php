@@ -1,6 +1,8 @@
 <?php 
     include "includes/connect.php";
     include "functions/common_functions.php";
+    @session_start();
+    error_reporting(0);
 ?>
 
 
@@ -42,10 +44,7 @@
                 <li><a href="contact.php">Contact us</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="/project/cart.php"><i class="fa-regular fa-heart"></i> Favorites<sup><?php ?></sup></a></li>
-                
-                <li>
-                
-                </li>
+               
                 <?php 
                 if(isset($_SESSION['username']))
                 {

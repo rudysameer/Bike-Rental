@@ -99,7 +99,7 @@
             <div class="card_container">
                 <div class="card">
                     <div class="imbBx">
-                        <img src="./image/team-1.png" alt="" class="img-team">
+                        <img src="./user_area/user_images/ayudh.jpg" alt="" class="img-team">
                     </div>
                     <div class="content-team">
                         <div class="contentBx">

@@ -2,6 +2,7 @@
 <?php include '../functions/common_functions.php';
 
 @session_start();
+error_reporting(0);
 ?>
 <?php 
 
@@ -51,12 +52,12 @@ $name = $_SESSION['username'];
                 <li><a href="/project/index1.php">Home</a></li>
                 <li><a href="../product.php">Products</a></li>
                 <li><a href="../contact.php">Contact us</a></li>
-                <li><a href="about.php">About Us</a></li>
+                <li><a href="../about.php">About Us</a></li>
                 <li><a href="/project/cart.php"><i class="fa-regular fa-heart"></i> Favorites<sup><?php ?></sup></a></li>
                 <?php 
                 if(isset($_SESSION['username']))
                 {
-                    echo "<li><a href='./user_area/profile.php'><i class='fa-regular fa-user'></i> My Account</a></li>";
+                    echo "<li><a href='../user_area/profile.php'><i class='fa-regular fa-user'></i> My Account</a></li>";
                 }
                 
                 ?>

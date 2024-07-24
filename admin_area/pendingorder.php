@@ -1,8 +1,14 @@
 <?php 
     include "../includes/connect.php";
+    @session_start();
 ?>
 
+<?php 
+if(isset($_SESSION['admin_username'])){
+    $admin_name = $_SESSION['admin_username'];
+    
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,6 +77,27 @@
         {
             width: 120px; /* Adjust the width as needed */
         }
+        .home_button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  background-color: darkgreen;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.home_button:hover {
+  background-color: green;
+}
+
+.home_button:active {
+  background-color: forestgreen;
+}
+
   </style>
 
 </head>
@@ -82,6 +109,7 @@
     <main class="table">
         <section class="table_header">
             <h1>Customer's Pending Orders</h1>
+            <button><a href="./index.php"  class="home_button">Home</a></button>
         </section>
         <section class="table_body">
         <table>
@@ -205,3 +233,9 @@
     
 </body>
 </html>
+<?php }
+else{
+    echo "<script>window.open('admin_login.php','_self')</script>";
+
+}
+?>

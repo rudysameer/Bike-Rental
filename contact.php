@@ -42,46 +42,31 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form onsubmit="sendEmail(); reset(); return false;">
+            <form action="https://formspree.io/f/mqkrogjl" method="POST">
                     <h2 class="ch2">Send Message</h2>
                     <div class="inputBox">
                         <label for=""style="color:#00000;">Full Name</label>
-                        <input type="text" id="name" name="" required="required">
+                        <input type="text" id="name" name="Name" required="required">
                         <span class="cspan">Full Name</span>
                     </div>
                     <div class="inputBox">
                     <label for="">Email</label>
-                        <input type="text" id="email" name="" required="required">
+                        <input type="text" id="email" name="Email" required="required">
                         <span class="cspan">Email</span>
                     </div>
                     <div class="inputBox">
                     <label for="">Your Full Message</label>
-                        <textarea id="message" required="required"></textarea>
+                        <textarea id="message" required="required" name="message"></textarea>
                         <span class="cspan">Type Your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" value="Send">
+                       <input type="submit" value="send">
                     </div>
                 </form>
             </div>
         </div>
     </section>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(){
-            Email.send({
-                Host : "smtp.gmail.com",
-                Username : "panthaaayudh@gmail.com",
-                Password : "pantha123",
-                To : 'vc78bca03@vedascollege.edu.np',
-                From : document.getElementById("email").value,
-                Subject : "Royal Bike Rental",
-                Body : "And this is the body"
-            }).then(
-            message => alert(message)
-            );
-        }
-    </script>
+    
     <?php include 'footer.php';?>
 </body>
 </html>
